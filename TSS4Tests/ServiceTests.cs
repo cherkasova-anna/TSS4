@@ -18,14 +18,14 @@ namespace TSS4Tests.Tests
         [Test]
         public void CreateServiceTest()
         {
-            UserService serv = new UserService(new UserRepository());
+            UserService serv = new UserService(new UserRepository(""));
             Assert.IsNotNull(serv.rep);
         }
 
         [Test]
         public void ProcessServiceTest()
         {
-            UserService serv = new UserService(new UserRepository());
+            UserService serv = new UserService(new UserRepository(""));
 
             serv.rep.User = new User()
             {

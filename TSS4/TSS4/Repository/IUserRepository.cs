@@ -10,7 +10,8 @@ namespace TSS4.Repository
     public interface IUserRepository
     {
         User User { get; set; }
+        string BaseUrl { get; set; }
 
-        int Get(string baseUrl, string param);
+        int Get(string param);
     }
 }

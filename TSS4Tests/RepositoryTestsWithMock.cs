@@ -33,8 +33,8 @@ namespace TSS4Tests.Tests
         public void UserGetTest()
         {
             Mock.StubUsers("anna", "url", 0, "users/anna-cherkasova");
-            UserRepository rep = new UserRepository();
-            int result = rep.Get(Mock.BaseUrl, "anna-cherkasova");
+            UserRepository rep = new UserRepository(Mock.BaseUrl);
+            int result = rep.Get("anna-cherkasova");
             Assert.AreEqual(result, 200);
             User user = new User()
             {
@@ -51,8 +51,8 @@ namespace TSS4Tests.Tests
         public void UserGetFailTest()
         {
             Mock.StubUsers("anna", "url", 0, "users/aaa");
-            UserRepository rep = new UserRepository();
-            int result = rep.Get(Mock.BaseUrl, "anna-cherkasova");
+            UserRepository rep = new UserRepository(Mock.BaseUrl);
+            int result = rep.Get("anna-cherkasova");
             Assert.AreEqual(result, 404);
             User user = new User()
             {

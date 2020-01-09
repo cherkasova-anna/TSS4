@@ -15,10 +15,16 @@ namespace TSS4.Repository
     public class UserRepository : IUserRepository
     {
         public User User { get; set; }
+        public string BaseUrl { get; set; }
 
-        public int Get (string baseUrl, string param)
+        public UserRepository(string baseUrl)
         {
-            string url = baseUrl + "users/" + param;
+            BaseUrl = baseUrl;
+        }
+
+        public int Get (string param)
+        {
+            string url = BaseUrl + "users/" + param;
             HttpWebRequest httpWebRequest = WebRequest.Create(url) as HttpWebRequest;
             httpWebRequest.UserAgent = "Awersome-app";
             HttpWebResponse httpWebResponse = null; ;
