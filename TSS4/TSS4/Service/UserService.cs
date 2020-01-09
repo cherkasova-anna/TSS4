@@ -16,5 +16,15 @@ namespace TSS4.Service
             this.rep = rep;
         }
 
+        public string Process()
+        {
+            var res = $"User: {rep.User.Login} has {rep.User.Public_repos} public repositories.";
+            if (rep.User.Public_repos < 5)
+                return res + " The work may be better!";
+            if (rep.User.Public_repos < 10)
+                return res + " The work is rather good!";
+            return res + " What`s a wonderful work!";
+        }
+
     }
 }
