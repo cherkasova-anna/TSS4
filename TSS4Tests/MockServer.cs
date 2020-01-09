@@ -6,7 +6,7 @@ using WireMock.Matchers;
 using WireMock.Server;
 using WireMock.RequestBuilders;
 using WireMock.ResponseBuilders;
-
+using TSS4.Views;
 
 namespace TSS4Tests
 {
@@ -33,6 +33,22 @@ namespace TSS4Tests
                .WithUrl(BaseUrl)
                .UsingGet())
                .RespondWith(Response.Create().WithBody("hello"));
+        }
+
+        public void StubUsers(string login, string url, int public_repo, string request)
+        {
+            var user = new User()
+            {
+                Login = login,
+                Url = url,
+                Public_repos = public_repo
+            };
+            Stub
+              .Given(Request
+              .Create()
+              .WithUrl(BaseUrl + request)
+              .UsingGet())
+              .RespondWith(Response.Create().WithBodyAsJson(user));
         }
 
         public void Stop()

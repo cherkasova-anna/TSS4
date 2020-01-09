@@ -8,12 +8,11 @@ using System.Net.NetworkInformation;
 using TSS4;
 
 namespace TSS4Tests.Tests
-{
-    
+{    
     [TestFixture]
     public class MockServerTest
     {
-        private static MockServer Mock { get; set; }     
+        private MockServer Mock { get; set; }     
 
         [Test]
         public void ConnectedToHostTest()
