@@ -12,7 +12,7 @@ using TSS4.Views;
 namespace TSS4Tests.Tests
 {
     [TestFixture]
-    public class ServiceTests
+    public class UserServiceIsolationTests
     {
        
         [Test]

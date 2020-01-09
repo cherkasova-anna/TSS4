@@ -13,7 +13,7 @@ namespace TSS4Tests.Tests
 {
 
     [TestFixture]
-    public class UserRepositoryTest
+    public class UserRepositoryIsolationTests
     {
         private  MockServer Mock { get; set; }
         private bool Started { get; set; } = false;
