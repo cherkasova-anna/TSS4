@@ -26,7 +26,13 @@ namespace TSS4.Service
             return res + " What`s a wonderful work!";
         }
 
-        
+        public string CheckUserWork(string user)
+        {
+            if (rep.Get(user) == 200)
+                return Process();
+            else
+                return "";
+        }
 
     }
 }

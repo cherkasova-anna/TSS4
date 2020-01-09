@@ -60,5 +60,28 @@ namespace TSS4Tests.Tests
             expected = "User: programmer has 20 public repositories. What`s a wonderful work!";
             Assert.AreEqual(result, expected);
         }
+
+        [Test]
+        public void CheckUserWorkTestIsolation()
+        {
+            UserService serv = new UserService(new MockUserRepository(""));
+            
+
+            string result = serv.CheckUserWork("anna-cherkasova");
+            string expected = "User: anna-cherkasova has 0 public repositories. The work may be better!";
+            Assert.AreEqual(result, expected);
+
+            
+
+            result = serv.CheckUserWork("WireMock-Net");
+            expected = "User: WireMock-Net has 5 public repositories. The work is rather good!";
+            Assert.AreEqual(result, expected);
+
+            
+
+            result = serv.CheckUserWork("programmer");
+            expected = "";
+            Assert.AreEqual(result, expected);
+        }
     }
 }

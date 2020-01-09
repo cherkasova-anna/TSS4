@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace TSS4.Repository
 {
-    class MockUserRepository
+    public class MockUserRepository : IUserRepository
     {
         public User User { get; set; }
         public string BaseUrl { get; set; }
