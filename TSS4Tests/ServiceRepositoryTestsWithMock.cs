@@ -39,8 +39,8 @@ namespace TSS4Tests.Tests
             UserService serv = new UserService(new UserRepository(Mock.BaseUrl));
 
 
-            string result = serv.CheckUserWork("anna-cherkasova");
-            string expected = "User: anna-cherkasova has 0 public repositories. The work may be better!";
+            var result = serv.CheckUserWork("anna-cherkasova");
+            var expected = "User: anna-cherkasova has 0 public repositories. The work may be better!";
             Assert.AreEqual(result, expected);
 
 

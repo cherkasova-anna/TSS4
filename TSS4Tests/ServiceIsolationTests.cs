@@ -34,8 +34,8 @@ namespace TSS4Tests.Tests
                 Public_repos = 0
             };
 
-            string result = serv.Process();
-            string expected = "User: anna has 0 public repositories. The work may be better!";
+            var result = serv.Process();
+            var expected = "User: anna has 0 public repositories. The work may be better!";
             Assert.AreEqual(result, expected);
 
             serv.rep.User = new User()
@@ -67,8 +67,8 @@ namespace TSS4Tests.Tests
             UserService serv = new UserService(new MockUserRepository(""));
             
 
-            string result = serv.CheckUserWork("anna-cherkasova");
-            string expected = "User: anna-cherkasova has 0 public repositories. The work may be better!";
+            var result = serv.CheckUserWork("anna-cherkasova");
+            var expected = "User: anna-cherkasova has 0 public repositories. The work may be better!";
             Assert.AreEqual(result, expected);
 
             

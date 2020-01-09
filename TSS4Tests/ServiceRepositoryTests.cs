@@ -23,8 +23,8 @@ namespace TSS4Tests.Tests
             UserService serv = new UserService(new UserRepository("https://api.github.com/"));
 
 
-            string result = serv.CheckUserWork("cherkasova-anna");
-            string expected = "User: cherkasova-anna has 0 public repositories. The work may be better!";
+            var result = serv.CheckUserWork("cherkasova-anna");
+            var expected = "User: cherkasova-anna has 0 public repositories. The work may be better!";
             Assert.AreEqual(result, expected);
 
 

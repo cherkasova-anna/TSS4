@@ -24,7 +24,7 @@ namespace TSS4.Repository
 
         public int Get (string param)
         {
-            string url = BaseUrl + "users/" + param;
+            var url = BaseUrl + "users/" + param;
             HttpWebRequest httpWebRequest = WebRequest.Create(url) as HttpWebRequest;
             httpWebRequest.UserAgent = "Awersome-app";
             HttpWebResponse httpWebResponse = null; ;
